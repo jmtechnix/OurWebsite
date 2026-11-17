@@ -78,7 +78,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 // ---- Work data ----
 const WORK = [
-  {icon:"🌐", title:"Business Website", tag:"Sample Project"},
+  {icon:"🌐", title:"Business Website", tag:"Sample Project", link:"https://jmtechnix.github.io/luxeaura-unisex-salon/"},
   {icon:"🛒", title:"E-commerce Website", tag:"Sample Project"},
   {icon:"⚙️", title:"AI Automation System", tag:"Concept"},
   {icon:"📄", title:"Landing Page", tag:"Sample Project"},
@@ -89,7 +89,8 @@ const workGrid = document.getElementById('workGrid');
 WORK.forEach(w=>{
   const el = document.createElement('div');
   el.className = 'work-card';
-  el.innerHTML = `<div class="work-thumb">${w.icon}</div><div class="work-body"><span class="tag">${w.tag}</span><h3 style="font-size:1.05rem;">${w.title}</h3></div>`;
+  const linkMarkup = w.link ? `<a class="work-link" href="${w.link}" target="_blank" rel="noopener noreferrer">Visit website ↗</a>` : '';
+  el.innerHTML = `<div class="work-thumb">${w.icon}</div><div class="work-body"><span class="tag">${w.tag}</span><h3 style="font-size:1.05rem;">${w.title}</h3>${linkMarkup}</div>`;
   workGrid.appendChild(el);
 });
 
